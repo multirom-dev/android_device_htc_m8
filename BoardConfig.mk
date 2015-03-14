@@ -80,7 +80,6 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # TWRP Build Flags
 BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
-DEVICE_RESOLUTION := 1080x1920
 RECOVERY_VARIANT := multirom
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
@@ -88,6 +87,7 @@ TW_INCLUDE_DUMLOCK := true
 TW_INCLUDE_L_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
 TW_NO_SCREEN_BLANK := true
+TW_THEME := portrait_hdpi
 
 # MultiROM config
 MR_INPUT_TYPE := type_b
