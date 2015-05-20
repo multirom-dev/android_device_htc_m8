@@ -17,6 +17,7 @@ const char *mr_init_devices[] =
     "/sys/devices/msm_sdcc.1/mmc_host/mmc0",
     "/sys/devices/msm_sdcc.1/mmc_host/mmc0/mmc0:0001",
     "/sys/devices/msm_sdcc.1/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
+    "/sys/devices/msm_sdcc.1/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p32",
     "/sys/devices/msm_sdcc.1/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p37",
     "/sys/devices/msm_sdcc.1/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p42",
     "/sys/devices/msm_sdcc.1/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p43",
@@ -93,6 +94,12 @@ const char *mr_init_devices[] =
     "/sys/module/pm_8x60/modes/cpu1/retention/idle_enabled",
     "/sys/module/pm_8x60/modes/cpu2/retention/idle_enabled",
     "/sys/module/pm_8x60/modes/cpu3/retention/idle_enabled",
+
+    // Encryption
+    "/sys/devices/virtual/ecryptfs",
+    "/sys/devices/virtual/misc/device-mapper",
+    "/sys/devices/virtual/misc/ion",
+    "/sys/devices/virtual/qseecom/qseecom",
 
     NULL
 };

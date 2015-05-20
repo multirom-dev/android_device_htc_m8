@@ -55,7 +55,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000 --board mrom$(shell date -u +%Y%m%d)-01
 BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8/mkbootimg.mk
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-cortex_a15-linux-gnueabihf-linaro_4.9
 TARGET_KERNEL_CONFIG := m8_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/m8gpe
 
@@ -91,14 +91,16 @@ TW_THEME := portrait_hdpi
 
 # MultiROM config
 MR_INPUT_TYPE := type_b
-MR_INIT_DEVICES := device/htc/m8/mr_init_devices.c
+MR_INIT_DEVICES := device/htc/m8/multirom/mr_init_devices.c
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
-MR_DEVICE_HOOKS := device/htc/m8/mr_hooks.c
+MR_DEVICE_HOOKS := device/htc/m8/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
 MR_FSTAB := device/htc/m8/recovery.fstab
 MR_KEXEC_MEM_MIN := 0x03200000
 MR_KEXEC_DTB := true
+MR_ENCRYPTION := true
+MR_ENCRYPTION_SETUP_SCRIPT := device/htc/m8/multirom/mr_cp_crypto.sh
 
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/msm_dwc3/f9200000.dwc3/gadget/lun%d/file
