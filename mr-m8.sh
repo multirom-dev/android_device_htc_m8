@@ -18,4 +18,4 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #
 
-repo sync -j8 . build/envsetup.sh && lunch omni_m8-eng && make -j8 bootimage && make -j8 recoveryimage && make -j8 multirom && make -j8 trampoline && make -j8 multirom_zip && make -j8 multirom_uninstaller
+repo sync -j8 && . build/envsetup.sh && lunch omni_m8-eng && make -j8 bootimage && make -j8 recoveryimage && make -j8 multirom && make -j8 trampoline && make -j8 multirom_zip && make -j8 multirom_uninstaller
