@@ -90,7 +90,7 @@ TW_INCLUDE_DUMLOCK := true
 TW_INCLUDE_L_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
 TW_NO_SCREEN_BLANK := true
-TW_THEME := portrait_hdpi
+TW_CUSTOM_THEME := device/htc/m8/recovery/theme
 
 # MultiROM config
 MR_INPUT_TYPE := type_b
