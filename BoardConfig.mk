@@ -93,6 +93,7 @@ TW_NO_SCREEN_BLANK := true
 TW_CUSTOM_THEME := device/htc/m8/recovery/theme
 
 # MultiROM config
+MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
 MR_DEVICE_HOOKS := device/htc/m8/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
 MR_DPI := xhdpi
