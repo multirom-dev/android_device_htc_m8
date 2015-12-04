@@ -93,17 +93,18 @@ TW_NO_SCREEN_BLANK := true
 TW_CUSTOM_THEME := device/htc/m8/recovery/theme
 
 # MultiROM config
-MR_INPUT_TYPE := type_b
-MR_INIT_DEVICES := device/htc/m8/multirom/mr_init_devices.c
-MR_DPI := xhdpi
-MR_DPI_FONT := 340
 MR_DEVICE_HOOKS := device/htc/m8/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
-MR_FSTAB := device/htc/m8/recovery.fstab
-MR_KEXEC_MEM_MIN := 0x03200000
-MR_KEXEC_DTB := true
+MR_DPI := xhdpi
+MR_DPI_FONT := 340
 MR_ENCRYPTION := true
 MR_ENCRYPTION_SETUP_SCRIPT := device/htc/m8/multirom/mr_cp_crypto.sh
+MR_FSTAB := device/htc/m8/multirom/mrom.fstab
+MR_INIT_DEVICES := device/htc/m8/multirom/mr_init_devices.c
+MR_INPUT_TYPE := type_b
+MR_KEXEC_MEM_MIN := 0x03200000
+MR_KEXEC_DTB := true
+MR_USE_MROM_FSTAB := true
 
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/msm_dwc3/f9200000.dwc3/gadget/lun%d/file
