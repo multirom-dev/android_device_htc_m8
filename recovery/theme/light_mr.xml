@@ -649,7 +649,7 @@
 			<object type="button">
 				<condition var1="tw_screen_timeout_secs" op="=" var2="0" />
 				<condition var1="tw_no_screen_timeout" op="!=" var2="1" />
-				<placement x="%col1_x%" y="%row4_2_y%" />
+				<placement x="%col1_x%" y="%row4_2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>Enable screen timeout</text>
 				<image resource="checkbox_false" />
@@ -659,7 +659,7 @@
 			<object type="button">
 				<condition var1="tw_screen_timeout_secs" op="!=" var2="0" />
 				<condition var1="tw_no_screen_timeout" op="!=" var2="1" />
-				<placement x="%col1_x%" y="%row4_2_y%" />
+				<placement x="%col1_x%" y="%row4_2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>Enable screen timeout</text>
 				<image resource="checkbox_true" />
@@ -921,14 +921,22 @@
 				<image checked="checkbox_true" unchecked="checkbox_false" />
 			</object>
 
+			<object type="checkbox">
+				<placement x="%col1_x%" y="%row3_2_y%" />
+				<font resource="body2" color="%text%" />
+				<text>Skip SuperSU check on reboot</text>
+				<data variable="tw_skipsucheck" />
+				<image checked="checkbox_true" unchecked="checkbox_false" />
+			</object>
+
 			<object type="text" color="%text_dark%">
 				<font resource="caption" />
-				<placement x="%col1_x%" y="%row3_3_y%" />
+				<placement x="%col1_x%" y="%row4_1a_y%" />
 				<text>Visual</text>
 			</object>
 
 			<object type="checkbox">
-				<placement x="%col1_x%" y="%row4_1_y%" />
+				<placement x="%col1_x%" y="%row4_2a_y%" />
 				<font resource="body2" color="%text%" />
 				<text>Center clock in statusbar</text>
 				<data variable="center_clock" />
@@ -936,26 +944,18 @@
 			</object>
 
 			<object type="checkbox">
-				<placement x="%col1_x%" y="%row4_2a_y%" />
-				<font resource="body2" color="%text%" />
-				<text>Samsung button layout for navbar</text>
-				<data variable="navbar_sams" />
-				<image checked="checkbox_true" unchecked="checkbox_false" />
-			</object>
-
-			<object type="checkbox">
 				<placement x="%col1_x%" y="%row5_1_y%" />
 				<font resource="body2" color="%text%" />
-				<text>Use buttons on main menu</text>
-				<data variable="menu_btn_solid" />
+				<text>Reversed button layout for navbar</text>
+				<data variable="navbar_sams" />
 				<image checked="checkbox_true" unchecked="checkbox_false" />
 			</object>
 
 			<object type="checkbox">
 				<placement x="%col1_x%" y="%row5_2a_y%" />
 				<font resource="body2" color="%text%" />
-				<text>Use alternative lock screen</text>
-				<data variable="alt_lock" />
+				<text>Use buttons on main menu</text>
+				<data variable="menu_btn_solid" />
 				<image checked="checkbox_true" unchecked="checkbox_false" />
 			</object>
 
@@ -1030,312 +1030,6 @@
 			<object type="action">
 				<touch key="back" />
 				<action function="page">main</action>
-			</object>
-		</page>
-
-		<page name="theme_color">
-			<object type="template" name="body" />
-
-			<object type="template" name="ab_ex" />
-
-			<object type="template" name="statusbarinfo" />
-
-			<object type="button">
-				<placement x="%ab_back_x%" y="%ab_y%" />
-				<font resource="body1" color="%text_button%" />
-				<image resource="actionbar_back" highlightresource="actionbar_back_hl" />
-				<action function="page">main</action>
-			</object>
-
-			<object type="image">
-				<image resource="bc_settings_theme" />
-				<placement x="%ab_bc_x%" y="%ab_y%" />
-			</object>
-
-			<object type="button">
-				<placement x="%ab_btn1_x%" y="%ab_y%" />
-				<font resource="body1" color="%text_button%" />
-				<image resource="actionbar_reset" highlightresource="actionbar_reset_hl" />
-				<action function="overlay">dialog_reset_theme</action>
-			</object>
-
-			<object type="text" color="%text_actionbar%">
-				<font resource="title" />
-				<placement x="%col1_x_indent%" y="%row1_2_y%" placement="2" />
-				<text>Select Color</text>
-			</object>
-
-			<object type="text" color="%text_actionbar%">
-				<font resource="body1" />
-				<placement x="%col1_x_indent%" y="%row1_2_y%" />
-				<text>%hl_color%</text>
-			</object>
-
-			<object type="text" color="%text_dark%">
-				<font resource="caption" />
-				<placement x="%col1_x%" y="%row2_2_y%" />
-				<text>Color</text>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x%" y="%row2_3_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_red" />
-				<actions>
-					<action function="set">tw_hl_color=Red</action>
-					<action function="set">tw_text_actionbar=F7DFDEFF</action>
-					<action function="set">tw_text_color_highlight=E51C23FF</action>
-					<action function="set">tw_folder=images_red</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col_col_center_x%" y="%row2_3_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_pink" />
-				<actions>
-					<action function="set">tw_hl_color=Pink</action>
-					<action function="set">tw_text_actionbar=F7DFE7FF</action>
-					<action function="set">tw_text_color_highlight=E91E63FF</action>
-					<action function="set">tw_folder=images_pink</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x_neg%" y="%row2_3_y%" placement="1" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_indigo" />
-				<actions>
-					<action function="set">tw_hl_color=Indigo</action>
-					<action function="set">tw_text_actionbar=DEE7EFFF</action>
-					<action function="set">tw_text_color_highlight=3F51B5FF</action>
-					<action function="set">tw_folder=images_indigo</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x%" y="%row3_3a_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_blue" />
-				<actions>
-					<action function="set">tw_hl_color=Blue</action>
-					<action function="set">tw_text_actionbar=E7EBFFFF</action>
-					<action function="set">tw_text_color_highlight=5677FCFF</action>
-					<action function="set">tw_folder=images_blue</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col_col_center_x%" y="%row3_3a_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_lightblue" />
-				<actions>
-					<action function="set">tw_hl_color=Light Blue</action>
-					<action function="set">tw_text_actionbar=DEF3F7FF</action>
-					<action function="set">tw_text_color_highlight=03A9F4FF</action>
-					<action function="set">tw_folder=images_lightblue</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x_neg%" y="%row3_3a_y%" placement="1" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_teal" />
-				<actions>
-					<action function="set">tw_hl_color=Teal</action>
-					<action function="set">tw_text_actionbar=DEEFEFFF</action>
-					<action function="set">tw_text_color_highlight=009688FF</action>
-					<action function="set">tw_folder=images_teal</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x%" y="%row5_1_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_green" />
-				<actions>
-					<action function="set">tw_hl_color=Green</action>
-					<action function="set">tw_text_actionbar=DEEFDEFF</action>
-					<action function="set">tw_text_color_highlight=259B24FF</action>
-					<action function="set">tw_folder=images_green</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col_col_center_x%" y="%row5_1_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_lightgreen" />
-				<actions>
-					<action function="set">tw_hl_color=Light Green</action>
-					<action function="set">tw_text_actionbar=EFF7E7FF</action>
-					<action function="set">tw_text_color_highlight=8BC34AFF</action>
-					<action function="set">tw_folder=images_lightgreen</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x_neg%" y="%row5_1_y%" placement="1" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_lime" />
-				<actions>
-					<action function="set">tw_hl_color=Lime</action>
-					<action function="set">tw_text_actionbar=F7F7DEFF</action>
-					<action function="set">tw_text_color_highlight=CDDC39FF</action>
-					<action function="set">tw_folder=images_lime</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x%" y="%row6_1a_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_amber" />
-				<actions>
-					<action function="set">tw_hl_color=Amber</action>
-					<action function="set">tw_text_actionbar=FFF7DEFF</action>
-					<action function="set">tw_text_color_highlight=FFC107FF</action>
-					<action function="set">tw_folder=images_amber</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col_col_center_x%" y="%row6_1a_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_orange" />
-				<actions>
-					<action function="set">tw_hl_color=Orange</action>
-					<action function="set">tw_text_actionbar=FFEFDEFF</action>
-					<action function="set">tw_text_color_highlight=FF9800FF</action>
-					<action function="set">tw_folder=images_orange</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x_neg%" y="%row6_1a_y%" placement="1" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_deeporange" />
-				<actions>
-					<action function="set">tw_hl_color=Deep Orange</action>
-					<action function="set">tw_text_actionbar=FFE7DEFF</action>
-					<action function="set">tw_text_color_highlight=FF5722FF</action>
-					<action function="set">tw_folder=images_deeporange</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x%" y="%row7_2_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_brown" />
-				<actions>
-					<action function="set">tw_hl_color=Brown</action>
-					<action function="set">tw_text_actionbar=E7E7E7FF</action>
-					<action function="set">tw_text_color_highlight=795548FF</action>
-					<action function="set">tw_folder=images_brown</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col_col_center_x%" y="%row7_2_y%" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_grey" />
-				<actions>
-					<action function="set">tw_hl_color=Grey</action>
-					<action function="set">tw_text_actionbar=EFEFEFFF</action>
-					<action function="set">tw_text_color_highlight=9E9E9EFF</action>
-					<action function="set">tw_folder=images_grey</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="button">
-				<highlight color="%highlight_color%" />
-				<placement x="%col1_x_neg%" y="%row7_2_y%" placement="1" />
-				<font resource="font_big" color="%text_button%" />
-				<image resource="clr_bluegrey" />
-				<actions>
-					<action function="set">tw_hl_color=Blue Grey</action>
-					<action function="set">tw_text_actionbar=E7EBEFFF</action>
-					<action function="set">tw_text_color_highlight=607D8BFF</action>
-					<action function="set">tw_folder=images_bluegrey</action>
-					<action function="page">set_color</action>
-				</actions>
-			</object>
-
-			<object type="action">
-				<touch key="home" />
-				<action function="page">main</action>
-			</object>
-
-			<object type="action">
-				<touch key="back" />
-				<action function="page">theme_settings</action>
-			</object>
-		</page>
-
-		<page name="set_color">
-			<object type="action">
-				<condition var1="dialog_hide_color" var2="0" />
-				<action function="page">theme_color</action>
-				<action function="overlay">dialog_color</action>
-			</object>
-
-			<object type="action">
-				<condition var1="dialog_hide_color" var2="1" />
-				<actions>
-					<action function="cmd">
-					mkdir "/cache/twrp";
-					unzip -o "/sdcard/TWRP/theme/ui.zip" -d "/cache/twrp";
-					chmod 777 "/cache/twrp/zip";
-					cp -r /cache/twrp/%tw_folder%/* "/cache/twrp/images";
-					busybox mv "/cache/twrp/ui.xml" "/cache/twrp/ui_temp.xml";
-					busybox sed "s/%text_highlight%/#%tw_text_color_highlight%/g" "/cache/twrp/ui_temp.xml" > "/cache/twrp/ui_temp2.xml";
-					rm -f "/cache/twrp/ui_temp.xml";
-					busybox sed "s/%text_actionbar%/#%tw_text_actionbar%/g" "/cache/twrp/ui_temp2.xml" > "/cache/twrp/ui.xml";
-					rm -f "/cache/twrp/ui_temp2.xml";
-					cd "/cache/twrp";
-					./zip -0 -r "/sdcard/TWRP/theme/ui.zip" *;
-					chown -R media_rw:media_rw "/sdcard/TWRP/theme";
-					cd /;
-					rm -r "/cache/twrp";
-					</action>
-					<action function="set">hl_color=%tw_hl_color%</action>
-					<action function="set">tw_back=reboot</action>
-					<action function="set">tw_action=reboot</action>
-					<action function="set">tw_action_param=recovery</action>
-					<action function="set">tw_has_action2=0</action>
-					<action function="set">tw_text1=No OS Installed!</action>
-					<action function="set">tw_text2=Are you sure you wish to restart?</action>
-					<action function="set">tw_action_text1=Restarting...</action>
-					<action function="set">tw_complete_text1=Restarting...</action>
-					<action function="set">tw_slider_text=Swipe to Restart</action>
-					<action function="page">rebootcheck</action>
-				</actions>
 			</object>
 		</page>
 
@@ -1639,7 +1333,7 @@
 			<object type="button">
 				<condition var1="tw_themeexists" var2="1" />
 				<condition var1="inject_theme" var2="0" />
-				<placement x="%col1_x%" y="%row7_2_y%" />
+				<placement x="%col1_x%" y="%row7_2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>Include current theme in repack</text>
 				<image resource="checkbox_false" />
@@ -1651,7 +1345,7 @@
 			<object type="button">
 				<condition var1="tw_themeexists" var2="1" />
 				<condition var1="inject_theme" var2="1" />
-				<placement x="%col1_x%" y="%row7_2_y%" />
+				<placement x="%col1_x%" y="%row7_2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>Include current theme in repack</text>
 				<image resource="checkbox_true" />
@@ -2866,7 +2560,7 @@
 				<placement x="%col1_x_indent%" y="%row1_2_y%" />
 				<text>%tw_zip_location%</text>
 			</object>
-			
+
 			<object type="image">
 				<image resource="hider_ab_ex" />
 				<placement x="%screen_w%" y="%row0_y%" placement="1" />
@@ -3271,7 +2965,7 @@
 				<image resource="btn_raised_back" />
 				<action function="page">flash_confirm</action>
 			</object>
-			
+
 			<object type="button">
 				<highlight color="%highlight_color%" />
 				<placement x="%btn_raised_right_x%" y="%row8_1_y%" placement="1" />
@@ -3995,35 +3689,43 @@
 			</object>
 
 			<object type="image">
-				<condition var1="tw_file" op="!=" var2="AROMA Filemanager" />
+				<condition var1="tw_aroma" op="!=" var2="AROMA Filemanager" />
 				<image resource="bc_install" />
 				<placement x="%ab_bc_x%" y="%ab_y%" />
 			</object>
 
 			<object type="image">
-				<condition var1="tw_file" var2="AROMA Filemanager" />
+				<condition var1="tw_aroma" var2="AROMA Filemanager" />
 				<image resource="bc_working" />
 				<placement x="%ab_bc_x%" y="%ab_y%" />
 			</object>
 
 			<object type="text" color="%text_actionbar%">
-				<condition var1="tw_file" op="!=" var2="AROMA Filemanager" />
+				<condition var1="tw_aroma" op="!=" var2="AROMA Filemanager" />
 				<font resource="title" />
 				<placement x="%col1_x_indent%" y="%row1_2_y%" placement="2" />
 				<text>Installing file %tw_zip_index% of %tw_zip_queue_count%</text>
 			</object>
 
 			<object type="text" color="%text_actionbar%">
-				<condition var1="tw_file" var2="AROMA Filemanager" />
+				<condition var1="tw_aroma" var2="AROMA Filemanager" />
 				<font resource="title" />
 				<placement x="%col1_x_indent%" y="%row1_2_y%" placement="2" />
 				<text>Run</text>
 			</object>
 
 			<object type="text" color="%text_actionbar%">
+				<condition var1="tw_aroma" op="!=" var2="AROMA Filemanager" />
 				<font resource="body1" />
 				<placement x="%col1_x_indent%" y="%row1_2_y%" />
 				<text>%tw_file%</text>
+			</object>
+
+			<object type="text" color="%text_actionbar%">
+				<condition var1="tw_aroma" var2="AROMA Filemanager" />
+				<font resource="body1" />
+				<placement x="%col1_x_indent%" y="%row1_2_y%" />
+				<text>%tw_aroma%</text>
 			</object>
 
 			<object type="image">
@@ -4034,16 +3736,20 @@
 			<object type="template" name="action_page_console" />
 
 			<object type="action">
-				<condition var1="tw_file" op="!=" var2="AROMA Filemanager" />
+				<condition var1="tw_aroma" op="!=" var2="AROMA Filemanager" />
 				<condition var1="tw_operation_state" var2="1" />
 				<action function="page">flash_done</action>
 			</object>
 
 			<object type="action">
-				<condition var1="tw_file" var2="AROMA Filemanager" />
+				<condition var1="tw_aroma" var2="AROMA Filemanager" />
 				<condition var1="tw_operation_state" var2="1" />
+				<actions>
+				<action function="set">tw_signed_zip_verify=%tw_signed_zip_verify_temp%</action>
 				<action function="set">tw_screen_timeout_secs=%tw_screen_timeout_temp%</action>
-				<action function="page">advanced</action>
+				<action function="set">tw_aroma=</action>
+				<action function="page">main</action>
+				</actions>
 			</object>
 		</page>
 
@@ -5372,7 +5078,7 @@
 				<image resource="bc_wipe" />
 				<placement x="%ab_bc_x%" y="%ab_y%" />
 			</object>
-			
+
 			<object type="text" color="%text_actionbar%">
 				<font resource="title" />
 				<placement x="%col1_x_indent%" y="%row1_2_y%" placement="2" />
@@ -6634,7 +6340,7 @@
 				<placement x="%ab_back_x%" y="%ab_y%" />
 				<font resource="body1" color="%text_button%" />
 				<image resource="actionbar_back" highlightresource="actionbar_back_hl" />
-				<action function="page">main</action>
+				<action function="multirom_exit_backup">multirom_manage</action>
 			</object>
 
 			<object type="image">
@@ -7486,7 +7192,7 @@
 				<image resource="bc_restore" />
 				<placement x="%ab_bc_x%" y="%ab_y%" />
 			</object>
-			
+
 			<object type="button">
 				<placement x="%ab_btn2_x%" y="%ab_y%" />
 				<font resource="body1" color="%text_button%" />
@@ -8163,7 +7869,7 @@
 
 			<object type="button">
 				<condition var1="tw_mount_system_ro" op="=" var2="0" />
-				<placement x="%col1_x%" y="%row7_2_y%" />
+				<placement x="%col1_x%" y="%row7_2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>Only mount system read-only</text>
 				<image resource="checkbox_false" />
@@ -8172,7 +7878,7 @@
 
 			<object type="button">
 				<condition var1="tw_mount_system_ro" op="!=" var2="0" />
-				<placement x="%col1_x%" y="%row7_2_y%" />
+				<placement x="%col1_x%" y="%row7_2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>Only mount system read-only</text>
 				<image resource="checkbox_true" />
@@ -8452,12 +8158,18 @@
 
 			<object type="action">
 				<touch key="home" />
-				<action function="page">main</action>
+				<actions>
+					<action function="set">tw_page_done=1</action>
+					<action function="page">main</action>
+				</actions>
 			</object>
 
 			<object type="action">
 				<touch key="back" />
-				<action function="page">mount</action>
+				<actions>
+					<action function="set">tw_page_done=1</action>
+					<action function="page">%tw_back%</action>
+				</actions>
 			</object>
 		</page>
 
@@ -9832,9 +9544,11 @@
 				<image resource="mb_filemanager" />
 				<actions>
 					<action function="queueclear"></action>
+					<action function="set">tw_signed_zip_verify_temp=%tw_signed_zip_verify%</action>
+					<action function="set">tw_signed_zip_verify=0</action>
 					<action function="set">tw_screen_timeout_temp=%tw_screen_timeout_secs%</action>
 					<action function="set">tw_screen_timeout_secs=0</action>
-					<action function="set">tw_file=AROMA Filemanager</action>
+					<action function="set">tw_aroma=AROMA Filemanager</action>
 					<action function="set">tw_filename=/sdcard/TWRP/aromafm/aromafm.zip</action>
 					<action function="queuezip"></action>
 					<action function="page">flash_aromafm_confirm</action>
@@ -9850,9 +9564,11 @@
 				<image resource="mb_filemanager_color" />
 				<actions>
 					<action function="queueclear"></action>
+					<action function="set">tw_signed_zip_verify_temp=%tw_signed_zip_verify%</action>
+					<action function="set">tw_signed_zip_verify=0</action>
 					<action function="set">tw_screen_timeout_temp=%tw_screen_timeout_secs%</action>
 					<action function="set">tw_screen_timeout_secs=0</action>
-					<action function="set">tw_file=AROMA Filemanager</action>
+					<action function="set">tw_aroma=AROMA Filemanager</action>
 					<action function="set">tw_filename=/sdcard/TWRP/aromafm/aromafm.zip</action>
 					<action function="queuezip"></action>
 					<action function="page">flash_aromafm_confirm</action>
@@ -10610,6 +10326,22 @@
 		</page>
 
 		<page name="installsu">
+			<object type="action">
+				<condition var1="tw_skipsucheck" op="=" var2="1" />
+				<action function="set">tw_page_done=1</action>
+			</object>
+
+			<object type="action">
+				<condition var1="tw_skipsucheck" op="=" var2="0" />
+				<action function="page">installsystemsu</action>
+			</object>
+		</page>
+
+		<page name="installsystemsu">
+			<object type="action">
+				<action function="set">tw_skipsucheck_decision=0</action>
+			</object>
+
 			<object type="template" name="body" />
 
 			<object type="template" name="ab_ex" />
@@ -10635,26 +10367,64 @@
 			</object>
 
 			<object type="image">
-				<placement x="%col1_x%" y="%row2_3_y%" />
+				<placement x="%col1_x%" y="%row2_2_y%" />
 				<image resource="icon_info" />
 			</object>
 
 			<object type="text" color="%text_highlight%">
 				<font resource="body2" />
-				<placement x="%col1_x_indent%" y="%row2_3_y%" />
+				<placement x="%col1_x_indent%" y="%row2_2_y%" />
 				<text>Your device does not appear</text>
 			</object>
 
 			<object type="text" color="%text_highlight%">
 				<font resource="body2" />
-				<placement x="%col1_x_indent%" y="%row3_1_y%" />
+				<placement x="%col1_x_indent%" y="%row2_3_y%" />
 				<text>to be rooted. Install SuperSU now?</text>
 			</object>
 
 			<object type="text" color="%text%">
 				<font resource="body2" />
-				<placement x="%col1_x_indent%" y="%row3_3_y%" />
+				<placement x="%col1_x_indent%" y="%row3_2_y%" />
 				<text>This will root your device.</text>
+			</object>
+
+			<object type="checkbox">
+				<placement x="%col1_x%" y="%row4_1_y%" />
+				<font resource="body2" color="%text%" />
+				<text>Skip SuperSU check on next reboot</text>
+				<data variable="tw_skipsucheck_decision" />
+				<image checked="checkbox_true" unchecked="checkbox_false" />
+			</object>
+
+			<object type="text" color="%text_dark%">
+				<font resource="body2" />
+				<placement x="%col1_x_indent%" y="%row4_2a_y%" />
+				<text>Only enable this option if you are using</text>
+			</object>
+
+			<object type="text" color="%text_dark%">
+				<font resource="body2" />
+				<placement x="%col1_x_indent%" y="%row4_3a_y%" />
+				<text>"systemless root" and want to skip this</text>
+			</object>
+
+			<object type="text" color="%text_dark%">
+				<font resource="body2" />
+				<placement x="%col1_x_indent%" y="%row5_1a_y%" />
+				<text>promt to install "classic system root".</text>
+			</object>
+
+			<object type="text" color="%text_dark%">
+				<font resource="body2" />
+				<placement x="%col1_x_indent%" y="%row5_2a_y%" />
+				<text>This option can also be changed</text>
+			</object>
+
+			<object type="text" color="%text_dark%">
+				<font resource="body2" />
+				<placement x="%col1_x_indent%" y="%row5_3a_y%" />
+				<text>in the Materialised settings menu.</text>
 			</object>
 
 			<object type="button">
@@ -10662,6 +10432,7 @@
 				<placement x="%btn_raised_right_x%" y="%row6_3_y%" placement="1" />
 				<font resource="menu" color="%text_button%" />
 				<image resource="btn_raised_noinstall" />
+				<action function="set">tw_skipsucheck=%tw_skipsucheck_decision%</action>
 				<action function="set">tw_page_done=1</action>
 			</object>
 
@@ -10686,28 +10457,18 @@
 		<page name="lock">
 			<background color="%darktransparent%" />
 
-			<object type="slider">
-				<condition var1="alt_lock" var2="0" />
-				<placement x="%center_x%" y="0" placement="5" />
-				<resource base="slider_lock" used="slider_lock_used" touch="slider_lock_handle" />
-				<action function="overlay"></action>
-			</object>
-
 			<object type="image">
-				<condition var1="alt_lock" var2="1" />
 				<image resource="unlock_icon" />
 				<placement x="%center_x%" y="%row4_1_y%" placement="4" />
 			</object>
 
 			<object type="text" color="%text_light%">
-				<condition var1="alt_lock" var2="1" />
 				<font resource="caption" />
 				<placement x="%center_x%" y="%slider_text_y%" placement="5" />
 				<text>Swipe to Unlock</text>
 			</object>
 
 			<object type="slider">
-				<condition var1="alt_lock" var2="1" />
 				<placement x="%center_x%" y="%slider_y%" placement="5" />
 				<resource base="slider" used="slider_used" touch="handle_h" />
 				<action function="overlay"></action>
@@ -11704,7 +11465,7 @@
 
 			<object type="button">
 				<condition var1="tw_time_zone_guioffset" var2="0" />
-				<placement x="%storage_indent_x%" y="%db_text2_y%" />
+				<placement x="%storage_indent_x%" y="%db_text2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>0        </text>
 				<image resource="radio_true_d" />
@@ -11713,7 +11474,7 @@
 
 			<object type="button">
 				<condition var1="tw_time_zone_guioffset" op="!=" var2="0" />
-				<placement x="%storage_indent_x%" y="%db_text2_y%" />
+				<placement x="%storage_indent_x%" y="%db_text2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>0        </text>
 				<image resource="radio_false_d" />
@@ -11722,7 +11483,7 @@
 
 			<object type="button">
 				<condition var1="tw_time_zone_guioffset" var2="15" />
-				<placement x="%storage_indent_x%" y="%db_text3a_y%" />
+				<placement x="%storage_indent_x%" y="%db_text3a_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>15      </text>
 				<image resource="radio_true_d" />
@@ -11731,7 +11492,7 @@
 
 			<object type="button">
 				<condition var1="tw_time_zone_guioffset" op="!=" var2="15" />
-				<placement x="%storage_indent_x%" y="%db_text3a_y%" />
+				<placement x="%storage_indent_x%" y="%db_text3a_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>15      </text>
 				<image resource="radio_false_d" />
@@ -11740,7 +11501,7 @@
 
 			<object type="button">
 				<condition var1="tw_time_zone_guioffset" var2="30" />
-				<placement x="%center_x%" y="%db_text2_y%" />
+				<placement x="%center_x%" y="%db_text2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>30       </text>
 				<image resource="radio_true_d" />
@@ -11749,7 +11510,7 @@
 
 			<object type="button">
 				<condition var1="tw_time_zone_guioffset" op="!=" var2="30" />
-				<placement x="%center_x%" y="%db_text2_y%" />
+				<placement x="%center_x%" y="%db_text2_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>30       </text>
 				<image resource="radio_false_d" />
@@ -11758,7 +11519,7 @@
 
 			<object type="button">
 				<condition var1="tw_time_zone_guioffset" var2="45" />
-				<placement x="%center_x%" y="%db_text3a_y%" />
+				<placement x="%center_x%" y="%db_text3a_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>45      </text>
 				<image resource="radio_true_d" />
@@ -11767,7 +11528,7 @@
 
 			<object type="button">
 				<condition var1="tw_time_zone_guioffset" op="!=" var2="45" />
-				<placement x="%center_x%" y="%db_text3a_y%" />
+				<placement x="%center_x%" y="%db_text3a_y%" textplacement="6" />
 				<font resource="body2" color="%text%" />
 				<text>45      </text>
 				<image resource="radio_false_d" />
@@ -13194,7 +12955,6 @@
 				<touch key="back" />
 				<action function="page">multirom_manage</action>
 			</object>
-			
 		</page>
 
 		<page name="multirom_do_rename">
@@ -16450,16 +16210,6 @@
 				<font resource="body2" spacing="0" color="%text%" highlightcolor="%text_highlight%" />
 				<data name="tw_multirom_install_loc" />
 				<items>tw_multirom_install_loc_list</items>
-			</object>
-
-			<object type="button">
-				<placement x="%db_left_x%" y="%db_y%" />
-				<font resource="menu" color="%text_button%" />
-				<image resource="db_cancel" highlightresource="db_cancel_hl" />
-				<actions>
-					<action function="multirom_list_loc_selected" />
-					<action function="overlay"></action>
-				</actions>
 			</object>
 
 			<object type="button">

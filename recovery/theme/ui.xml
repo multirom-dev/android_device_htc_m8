@@ -17,7 +17,10 @@
 		<resource name="subhead" type="font" filename="RobotoRegular.ttf" size="52" fallback="Roboto-Regular-52" />
 		<resource name="menu" type="font" filename="RobotoMedium.ttf" size="42" fallback="Roboto-Medium-42" />
 		<resource name="title" type="font" filename="RobotoMedium.ttf" size="60" fallback="Roboto-Medium-60" />
-		<resource name="fixed" type="font" filename="DroidSansMono.ttf" size="36" fallback="Roboto-Medium-36" />
+		<resource name="fixed" type="font" filename="DroidSansMono.ttf" size="30" />
+		<resource name="font_l" type="font"  filename="RobotoMedium.ttf" size="52" />
+		<resource name="font_m" type="font" filename="RobotoMedium.ttf" size="42" />
+		<resource name="font_s" type="font" filename="RobotoMedium.ttf" size="36" />
 
 		<resource name="statusbar" type="image" filename="statusbar" />
 		<resource name="actionbar" type="image" filename="actionbar" />
@@ -306,9 +309,6 @@
 
 		<resource name="slider" type="image" filename="slider" />
 		<resource name="slider_used" type="image" filename="slider_used" />
-		<resource name="slider_lock" type="image" filename="slider_lock" />
-		<resource name="slider_lock_used" type="image" filename="slider_lock_used" />
-		<resource name="slider_lock_handle" type="image" filename="slider_lock_handle" />
 		<resource name="handle" type="image" filename="handle" />
 		<resource name="handle_h" type="image" filename="handle_h" />
 
@@ -343,13 +343,14 @@
 
 	<variables>
 		<!--theme settings-->
-		<variable name="theme_version" value="287X_v1" />
+		<variable name="theme_version" value="287X_v2" />
 		<variable name="use_flashify" value="0" persist="1" />
-		<variable name="alt_lock" value="0" persist="1" />
+		<variable name="alt_lock" value="1" persist="1" />
 		<variable name="inject_theme" value="0" persist="1" />
 		<variable name="show_mrom_rec_version" value="0" persist="1" />
 		<variable name="auto_flash_repack" value="0" persist="1" />
 		<variable name="aromafm" value="0" persist="1" />
+		<variable name="tw_skipsucheck" value="0" persist="1" />
 		<variable name="auto_generate" value="0" persist="1" />
 		<variable name="show_cpu_temp" value="0" persist="1" />
 		<variable name="center_clock" value="0" persist="1" />
