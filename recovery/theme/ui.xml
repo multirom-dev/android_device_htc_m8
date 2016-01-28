@@ -6,17 +6,21 @@
 		<author>z31s1g</author>
 		<title>TWRP Materialised MultiROM Light</title>
 		<description>Material Design theme for TWRP recovery</description>
-		<preview>preview.jpg</preview>
+		<preview>preview.png</preview>
+		<themeversion>1</themeversion>
 	</details>
 
 	<resources>
-		<resource name="status" type="font" filename="RobotoMedium.ttf" size="40" fallback="Roboto-Medium-48" />
-		<resource name="caption" type="font" filename="RobotoMedium.ttf" size="36" fallback="Roboto-Regular-36" />
-		<resource name="body1" type="font" filename="RobotoRegular.ttf" size="42" fallback="Roboto-Regular-42" />
-		<resource name="body2" type="font" filename="RobotoMedium.ttf" size="42" fallback="Roboto-Medium-42" />
-		<resource name="subhead" type="font" filename="RobotoRegular.ttf" size="52" fallback="Roboto-Regular-52" />
-		<resource name="menu" type="font" filename="RobotoMedium.ttf" size="42" fallback="Roboto-Medium-42" />
-		<resource name="title" type="font" filename="RobotoMedium.ttf" size="60" fallback="Roboto-Medium-60" />
+		<resource name="font" type="font" filename="RobotoCondensed-Regular.ttf" size="40" />
+		<resource name="mediumfont" type="font" filename="RobotoCondensed-Regular.ttf" size="40" />
+		<resource name="filelist" type="font" filename="RobotoCondensed-Regular.ttf" size="40" />
+		<resource name="status" type="font" filename="RobotoMedium.ttf" size="40" />
+		<resource name="caption" type="font" filename="RobotoMedium.ttf" size="36" />
+		<resource name="body1" type="font" filename="RobotoRegular.ttf" size="42" />
+		<resource name="body2" type="font" filename="RobotoMedium.ttf" size="42" />
+		<resource name="subhead" type="font" filename="RobotoRegular.ttf" size="52" />
+		<resource name="menu" type="font" filename="RobotoMedium.ttf" size="42" />
+		<resource name="title" type="font" filename="RobotoMedium.ttf" size="60" />
 		<resource name="fixed" type="font" filename="DroidSansMono.ttf" size="30" />
 		<resource name="font_l" type="font"  filename="RobotoMedium.ttf" size="52" />
 		<resource name="font_m" type="font" filename="RobotoMedium.ttf" size="42" />

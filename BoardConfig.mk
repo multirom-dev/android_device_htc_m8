@@ -76,23 +76,17 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS := true
-#TARGET_RECOVERY_INITRC := device/htc/m8/recovery/init.rc
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
 
 # TWRP Build Flags
 BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_INCLUDE_DUMLOCK := true
-TW_INCLUDE_L_CRYPTO := true
+TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
-TW_NO_SCREEN_BLANK := true
 TW_CUSTOM_THEME := device/htc/m8/recovery/theme
 
 # MultiROM config
+TARGET_RECOVERY_IS_MULTIROM := true
 MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
 MR_DEVICE_HOOKS := device/htc/m8/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
@@ -106,9 +100,6 @@ MR_INPUT_TYPE := type_b
 MR_KEXEC_MEM_MIN := 0x03200000
 MR_KEXEC_DTB := true
 MR_USE_MROM_FSTAB := true
-
-# USB
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/msm_dwc3/f9200000.dwc3/gadget/lun%d/file
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
