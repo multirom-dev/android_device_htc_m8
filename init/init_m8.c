@@ -113,7 +113,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "4.20.651.10 CL476182 release-keys");
         property_set("ro.product.device", "htc_m8whl");
         property_set("telephony.sms.pseudo_multipart", "1");
-        property_set("ro.ril.enable.pre_r8fd=1", "1");
         property_set("ro.ril.oem.ecclist", "911");
         property_set("ro.ril.set.mtusize", "1422");
         property_set("ro.cdma.home.operator.numeric", "310120");

@@ -57,7 +57,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000 --board mrom$(shell date -u +%Y%m%d)-01
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
 BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8/recovery/mkbootimg.mk
 TARGET_KERNEL_CONFIG := m8_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/m8gpe
@@ -77,16 +77,17 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_USES_MMCUTILS := true
+TARGET_RECOVERY_DEVICE_MODULES := chargeled
 
 # TWRP Build Flags
 BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
 TW_INCLUDE_DUMLOCK := true
 TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
-TW_CUSTOM_THEME := device/htc/m8/recovery/theme
 
 # MultiROM config
 TARGET_RECOVERY_IS_MULTIROM := true
+DEVICE_RESOLUTION := 1080x1920
 MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
 MR_DEVICE_HOOKS := device/htc/m8/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
@@ -99,7 +100,18 @@ MR_INIT_DEVICES := device/htc/m8/multirom/mr_init_devices.c
 MR_INPUT_TYPE := type_b
 MR_KEXEC_MEM_MIN := 0x03200000
 MR_KEXEC_DTB := true
+MR_PIXEL_FORMAT := "RGBX_8888"
 MR_USE_MROM_FSTAB := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+
+include device/htc/m8/BoardConfig-MR_REC_VERSION.mk
+
+ifeq ($(MR_REC_VERSION),)
+MR_REC_VERSION := $(shell date -u +%Y%m%d)-01
+endif
+
+BOARD_MKBOOTIMG_ARGS += --board mrom$(MR_REC_VERSION)
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
