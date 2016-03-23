@@ -19,7 +19,7 @@ $(shell echo "MultiROM Recovery build number=`cat $(MR_REC_BUILD_NUMBER_FILE)`" 
 recoveryimage:
 	$(info Increase MultiROM Recovery build number)
 	@build_num=`cat $(MR_REC_BUILD_NUMBER_FILE)`; \
-	build_num=$$(( $$build_num + 1 )); \
+	build_num=$$(( 10#$$build_num + 1 )); \
 	if [ $$build_num -gt 99 ]; then \
 		echo -ne "\nERROR: Build number will exceed 99 resetting to 01\n\n" 1>&2; \
 		build_num=1; \
