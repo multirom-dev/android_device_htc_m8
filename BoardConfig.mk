@@ -104,7 +104,7 @@ MR_USE_MROM_FSTAB := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 
-include device/htc/m8/BoardConfig-MR_REC_VERSION.mk
+include device/htc/m8/multirom/MR_REC_VERSION.mk
 
 ifeq ($(MR_REC_VERSION),)
 MR_REC_VERSION := $(shell date -u +%Y%m%d)-01
