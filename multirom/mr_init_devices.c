@@ -44,6 +44,8 @@ const char *mr_init_devices[] =
     "/sys/devices/virtual/misc/android_adb",
     "/sys/devices/virtual/android_usb/android0/f_adb",
     "/sys/bus/usb",
+    
+    "/sys/devices/f9924000.i2c/i2c-0/0-0020/input*",
 
     "/sys/devices/platform/xhci-hcd*",
 
