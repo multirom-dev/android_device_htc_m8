@@ -21,4 +21,4 @@
 NUMCORES=`getconf _NPROCESSORS_ONLN`
 JSYNC=`echo $(( $NUMCORES * 2 ))`
 
-repo sync -j$JSYNC && . build/envsetup.sh && lunch omni_m8-eng && make -j$JSYNC recoveryimage && make -j$JSYNC multirom_zip && make -j$JSYNC multirom_uninstaller
+. build/envsetup.sh && lunch omni_m8-eng && make -j$JSYNC recoveryimage && make -j$JSYNC multirom_zip && make -j$JSYNC multirom_uninstaller
