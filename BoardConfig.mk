@@ -90,6 +90,7 @@ DEVICE_RESOLUTION := 1080x1920
 MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
 MR_DEVICE_HOOKS := device/htc/m8/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
+#MR_DEVICE_SPECIFIC_VERSION := a
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
 MR_ENCRYPTION := true
@@ -104,7 +105,7 @@ MR_USE_MROM_FSTAB := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 
-include device/htc/m8/multirom/MR_REC_VERSION.mk
+include device/common/version-info/MR_REC_VERSION.mk
 
 ifeq ($(MR_REC_VERSION),)
 MR_REC_VERSION := $(shell date -u +%Y%m%d)-01
