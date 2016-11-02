@@ -86,11 +86,14 @@ TW_NO_EXFAT_FUSE := true
 
 # MultiROM config
 TARGET_RECOVERY_IS_MULTIROM := true
+MR_DEVICE_VARIANTS := m8 htc_m8         # HTC One M8 GSM
+MR_DEVICE_VARIANTS += m8wl htc_m8wl     # HTC One M8 Verizon
+MR_DEVICE_VARIANTS += m8whl htc_m8whl   # HTC One M8 Sprint
 DEVICE_RESOLUTION := 1080x1920
-MR_ALLOW_NKK71_NOKEXEC_WORKAROUND := true
+MR_NO_KEXEC := enabled
 MR_DEVICE_HOOKS := device/htc/m8/multirom/mr_hooks.c
 MR_DEVICE_HOOKS_VER := 4
-#MR_DEVICE_SPECIFIC_VERSION := a
+#MR_DEVICE_SPECIFIC_VERSION := c ... let the build script deal with this!
 MR_DPI := xhdpi
 MR_DPI_FONT := 340
 MR_ENCRYPTION := true
