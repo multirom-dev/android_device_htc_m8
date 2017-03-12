@@ -4,4 +4,4 @@ MultiROM by @Tasssadar
 
 Device tree for HTC One (M8) - all variants
 
-Builds with OmniROM Android 4.4 tree
+Builds with OmniROM android-5.1 tree

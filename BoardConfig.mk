@@ -29,9 +29,9 @@
 # 0P6B70000 - Sprint
 
 # Model Ids (Dual SIM variants)
-# 0P6B41000 - Chinese CDMA version
-# 0P6B61000 - Chinese GSM version
-# 0P6B64000 - European GSM version
+# 0P6B41000 - Chinese (China Telecom) LTE/EV-DO/CDMA + GSM version
+# 0P6B61000 - Chinese (China Unicom) LTE/WCDMA/GSM + GSM version
+# 0P6B64000 / 0P6B68000 - International LTE/WCDMA/GSM + GSM version
 
 BOARD_VENDOR := htc
 
@@ -56,10 +56,9 @@ TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000 --dt device/htc/m8/recovery/dt.img
-BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8/recovery/mkbootimg.mk
-TARGET_PREBUILT_KERNEL := device/htc/m8/recovery/kernel
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --dt device/htc/m8/dt.img --tags_offset 0x01e00000
+BOARD_NEEDS_LZMA_MINIGZIP := true
+TARGET_PREBUILT_KERNEL := device/htc/m8/kernel
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
@@ -76,19 +75,22 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_USES_MMCUTILS := true
-TARGET_RECOVERY_DEVICE_MODULES := chargeled
 
 # TWRP Build Flags
-BOARD_RECOVERY_BLDRMSG_OFFSET := 2048
-TW_INCLUDE_DUMLOCK := true
+TW_THEME := portrait_hdpi
+TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_CRYPTO := true
+TW_CRYPTO_USE_SYSTEM_VOLD := true
 TW_NO_EXFAT_FUSE := true
+TW_NO_SCREEN_BLANK := true
+COMMON_GLOBAL_CPPFLAGS += -DBOARD_RECOVERY_BLDRMSG_OFFSET=2048
+TARGET_RECOVERY_DEVICE_MODULES := chargeled
 
 # MultiROM config
 TARGET_RECOVERY_IS_MULTIROM := true
-MR_DEVICE_VARIANTS := m8 htc_m8         # HTC One M8 GSM
-MR_DEVICE_VARIANTS += m8wl htc_m8wl     # HTC One M8 Verizon
-MR_DEVICE_VARIANTS += m8whl htc_m8whl   # HTC One M8 Sprint
+MR_DEVICE_VARIANTS := htc_m8      # HTC One M8 GSM
+MR_DEVICE_VARIANTS += htc_m8wl    # HTC One M8 Verizon
+MR_DEVICE_VARIANTS += htc_m8whl   # HTC One M8 Sprint
 DEVICE_RESOLUTION := 1080x1920
 MR_NO_KEXEC := enabled
 MR_DEVICE_HOOKS := device/htc/m8/multirom/mr_hooks.c
@@ -118,8 +120,4 @@ BOARD_MKBOOTIMG_ARGS += --board mrom$(MR_REC_VERSION)
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/htc/m8/recovery/init/init_m8.c
-
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m8/releasetools
+TARGET_INIT_VENDOR_LIB := libinit_m8

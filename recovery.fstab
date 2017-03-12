@@ -4,7 +4,7 @@
 /system		ext4	/dev/block/platform/msm_sdcc.1/by-name/system
 /data		ext4	/dev/block/platform/msm_sdcc.1/by-name/userdata				flags=encryptable=/dev/block/platform/msm_sdcc.1/by-name/extra
 /misc		emmc	/dev/block/platform/msm_sdcc.1/by-name/misc
-/recovery 	emmc	/dev/block/platform/msm_sdcc.1/by-name/recovery
+/recovery 	emmc	/dev/block/platform/msm_sdcc.1/by-name/recovery				flags=backup=1
 /devlog 	ext4	/dev/block/platform/msm_sdcc.1/by-name/devlog
 /carrier	ext4	/dev/block/platform/msm_sdcc.1/by-name/carrier
 /reserve	vfat	/dev/block/platform/msm_sdcc.1/by-name/reserve
